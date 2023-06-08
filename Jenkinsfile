@@ -4,15 +4,6 @@ pipeline {
   environment {
     AWS_DEFAULT_REGION = 'ap-south-1'
   }
-
-  stages {
-    stage('Checkout') {
-      steps {
-        // Checkout source code from version control
-         git checkout s3bucket.yml
-      }
-    }
-
     stage('Deploy CloudFormation') {
       steps {
         withCredentials([string(credentialsId: 'aws-credentials', variable: 'AWS_ACCESS_KEY_ID'), string(credentialsId: 'aws-credentials', variable: 'AWS_SECRET_ACCESS_KEY')]) {
