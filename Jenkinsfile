@@ -9,7 +9,7 @@ pipeline {
     stage('Checkout') {
       steps {
         // Checkout source code from version control
-        // git checkout <repository>
+         git checkout s3bucket.yml
       }
     }
 
