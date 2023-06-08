@@ -7,7 +7,7 @@ pipeline {
   stages {
     stage('Deploy CloudFormation') {
       steps {
-        withCredentials([string(credentialsId: 'aws-credentials', variable: 'AWS_ACCESS_KEY_ID'), string(credentialsId: 'aws-credentials', variable: 'AWS_SECRET_ACCESS_KEY')]) {
+        withCredentials([string(credentialsId: 'AWS-Credentials', variable: 'AWS_ACCESS_KEY_ID'), string(credentialsId: 'AWS-Credentials', variable: 'AWS_SECRET_ACCESS_KEY')]) {
           script {
             // Install AWS CLI
             sh 'pip install awscli'
